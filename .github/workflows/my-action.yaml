@@ -1,0 +1,13 @@
+# Name
+name: My Test Workflow
+
+# trigger event (ex. pull_req)
+on: [push]
+
+# jobs run in parallel by default, each runs steps in sequence
+jobs:
+  # job to print something out
+  say-hello:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Hello, Github Actions!"
