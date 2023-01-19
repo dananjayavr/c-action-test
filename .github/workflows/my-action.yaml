@@ -18,7 +18,7 @@ jobs:
     # note: this lists 'say-hello' as a prerequisite
     # so say-hello job will be run first
     needs: [say-hello]
-    runs: ubuntu-latest
+    runs-on: ubuntu-latest
     steps:
       # Use github.com/actions/checkout to checkout this repo
       - name: Check out this repo
