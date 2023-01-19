@@ -1,7 +1,7 @@
 import os, subprocess
 
 # settings 
-TEST_DIR = "/tests"
+TEST_DIR = "./tests"
 CODE_FILE = "main.c" 
 COMPILER_TIMEOUT = 10.0 # important to make sure container does not run forever (in seconds)
 RUN_TIMEOUT = 10.0 # important to make sure container does not run forever (in seconds)
