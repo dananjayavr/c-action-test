@@ -10,4 +10,26 @@ jobs:
   say-hello:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "Hello, Github Actions!"
+      - name: Say hello
+        run: echo "Hello, Github Actions!"
+  
+  # job to build and test our C code
+  # note: this lists 'say-hello' as a prerequisite
+  # so say-hello job will be run first
+  needs: [say-hello]
+  runs: ubuntu-latest
+  steps:
+    # Use github.com/actions/checkout to checkout this repo
+    - name: Check out this repo
+      uses: actions/checkout@v3
+    
+    # Install necessary packages
+    - name: Install dependencies
+      run: sudo apt install -y build-essential python3
+    
+    # See where we are in the VM
+    - run: pwd
+
+    # Run our test
+    - name: Run test
+      run: python3 test.py
