@@ -14,6 +14,7 @@ jobs:
         run: echo "Hello, Github Actions!"
   
   # job to build and test our C code
+  build-and-test:
   # note: this lists 'say-hello' as a prerequisite
   # so say-hello job will be run first
   needs: [say-hello]
